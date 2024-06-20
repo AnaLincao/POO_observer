@@ -1,0 +1,24 @@
+O padrão Observer permite que objetos interessados sejam avisados da mudança de estado ou outros eventos ocorrendo num outro objeto
+
+
+O objeto sendo observado é chamado de: "Subject" ou "Observable" 
+
+O objeto que observa é chamado de: "Observer";
+
+----------
+//classes
+Interface pública Observer: As classes que implementarem essa interface, que por sua vez conterá um método de atualização (update), deverão ser notificadas quando da atualização ou mudança do estado do objeto observado.
+
+Implementação da interface Java Observer: é possível observar a criação do método update(Object obj) que é usado para conter a regra de atualização específica de cada observador. Logo, a interface define um contrato de implementação obrigatório para com os objetos observadores, de que eles terão de tomar alguma providência, executar alguma ação, após as notificações de mudança no objeto observado.
+
+Classe Observable: Define a classe que será observada. Essa classe geralmente guarda como atributo uma lista (Lista Java comum, Collections) dos observers associados à mesma, para que os mesmos possam ser notificados quando a mudança acontecer na classe.
+
+---------
+//Métodos
+Alguns métodos geralmente usados:
+
+- registerObserver(Observer observer): Adiciona o observer passado por parâmetro à lista de observadores do objeto observado;
+- deleteObserver(Observer observer): Remove o observer passado por parâmetro da lista de observadores do objeto observado;
+- hasChanged(): Verifica se o objeto sofreu alguma mudança;
+- notifyObservers(): Notifica todos os observers caso haja alguma mudança no objeto observado.
+
